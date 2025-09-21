@@ -487,6 +487,19 @@
             opacity: 0.8;
             margin-bottom: 8px;
         }
+
+        /* Slogan destacado */
+        .slogan {
+            text-align: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin: 30px 0;
+            padding: 15px;
+            background: linear-gradient(135deg, var(--bg-secondary), white);
+            border-radius: 12px;
+            box-shadow: var(--shadow-md);
+        }
     </style>
 </head>
 <body>
@@ -502,28 +515,35 @@
     <div class="hero">
         <div class="container">
             <div class="hero-content fade-in">
-                <h1>Transforme as Crises em Conexão em Apenas 7 Dias</h1>
-                <p class="subtitle">O método comprovado que está revolucionando a vida de famílias com crianças autistas</p>
+                <h1>Reduza as Crises do Seu Filho Autista em 7 Dias</h1>
+                <p class="subtitle">O método comprovado para pais no limite que desejam <strong>menos crises e mais conexão</strong></p>
                 <div class="urgency-text">⚠️ Últimas 47 vagas com 74% de desconto</div>
-                <a href="#offer" class="cta-button">Sim, Quero Transformar Nossa Rotina!</a>
+                <a href="#checkout-principal" class="cta-button" onclick="smoothScrollToCheckout()">Sim, Quero Menos Crises e Mais Conexão!</a>
             </div>
         </div>
     </div>
 
     <div class="container">
+        <!-- Slogan destacado -->
+        <div class="slogan fade-in">
+            Menos crises, mais conexão!
+        </div>
+
         <!-- Seção: O Problema -->
         <div class="section fade-in">
             <h2>Você Reconhece Essa Realidade?</h2>
             <p>Noites sem dormir por causa das crises constantes. Momentos de desespero sem saber como acalmar seu filho. A sensação de que nada funciona e que você está falhando como mãe ou pai.</p>
-            <p><strong>Você não está sozinha.</strong> Mais de 90% dos pais de crianças autistas vivem essa mesma angústia diariamente. Mais existe uma luz no fim do túnel.</p>
+            <p><strong>Você não está sozinha.</strong> Mais de 90% dos pais de crianças autistas vivem essa mesma angústia diariamente. Mas existe uma luz no fim do túnel.</p>
             
             <div style="text-align: center; margin: 40px 0;">
                 <img src="family_hug.jpg" alt="Família abraçada" style="max-width: 100%; border-radius: 16px; box-shadow: var(--shadow-lg);">
-            </div>    
+            </div>
+        </div>
+
         <!-- Seção: A Solução -->
         <div class="section fade-in">
-            <h2>Apresentamos o Método "Café com teu Filho"</h2>
-            <p>Um sistema completo e cientificamente embasado que vai guiar você passo a passo para criar uma rotina harmoniosa e cheia de amor com seu filho.</p>
+            <h2>Conheça o Método "Café com teu Filho"</h2>
+            <p>Um sistema completo e cientificamente embasado que vai guiar você passo a passo para criar uma rotina harmoniosa e cheia de amor com seu filho. <strong>Menos crises, mais conexão - é isso que você vai conquistar.</strong></p>
             
             <ul class="benefits-list">
                 <li>Reduzir crises em até 80% nos primeiros 7 dias</li>
@@ -534,16 +554,17 @@
                 <li>Transformar sua casa em um ambiente de paz</li>
             </ul>
         </div>  
+
         <!-- Seção: O Que Você Vai Receber -->
         <div class="section fade-in">
-            <h2>Seu Kit Completo de Transformação</h2>
+            <h2>Seu Kit Completo de Transformação: Menos Crises, Mais Conexão!</h2>
             
             <div class="product-grid">
                 <div class="product-card">
                     <img src="cafe_com_teu_filho_ebook.png" alt="E-book Café com Teu Filho">
                     <div class="product-value">Valor: R$ 47,90</div>
                     <h3>📖 E-book "Café com Teu Filho"</h3>
-                    <p>O guia principal com os 7 hábitos transformadores que vão revolucionar sua relação com seu filho. Baseado em anos de pesquisa e casos real de sucesso.</p>
+                    <p>O guia principal com os 7 hábitos transformadores que vão revolucionar sua relação com seu filho. Baseado em anos de pesquisa e casos reais de sucesso.</p>
                 </div>
 
                 <div class="product-card">
@@ -575,30 +596,31 @@
                 </div>
             </div>
 
-            <div class="pricing">
+            <div class="pricing" id="checkout-principal">
                 <div class="original-price">Valor Total Separado: R$ 145,50</div>
                 <div class="current-price">R$ 37,90</div>
                 <p style="font-weight: 600; color: var(--success-color);">Economia de R$ 107,60 (74% OFF)</p>
+                <p style="font-style: italic; margin: 15px 0;">Menos crises, mais conexão por um investimento mínimo</p>
                 <a href="https://pay.kirvano.com/dfc51481-b46e-4057-82fd-6141de2057a4" class="cta-button" target="_blank">Quero Garantir Minha Transformação!</a>
             </div>
         </div>
 
         <!-- Seção: Depoimentos -->
         <div class="testimonials fade-in">
-            <h2>Histórias Reais de Transformação</h2>
+            <h2>Histórias Reais de Transformação: Menos Crises, Mais Conexão!</h2>
             
             <div class="testimonial">
-                <p>"Em apenas 5 dias aplicando o método, as crises do João diminuíram 70%. Pela primeira vez em anos, nossa casa voltou a ter paz. Meu filho está mais calmo e eu me sinto uma mãe confiante novamente!"</p>
+                <p>"Em apenas 5 dias aplicando o método, as crises do João diminuíram 70%. Pela primeira vez em anos, nossa casa voltou a ter paz. Meu filho está mais calmo e eu me sinto uma mãe confiante novamente! Finalmente conseguimos ter menos crises e mais conexão."</p>
                 <div class="testimonial-author">— Ana Paula, mãe do João (5 anos, TEA)</div>
             </div>
 
             <div class="testimonial">
-                <p>"O checklist anti-crise salvou nossos finais de semana. Agora conseguimos sair de casa sem medo e criar memórias felizes em família. Sofia está mais comunicativa e carinhosa."</p>
+                <p>"O checklist anti-crise salvou nossos finais de semana. Agora conseguimos sair de casa sem medo e criar memórias felizes em família. Sofia está mais comunicativa e carinhosa. É incrível ver como conseguimos ter menos crises e muito mais conexão."</p>
                 <div class="testimonial-author">— Carlos e Marina, pais da Sofia (6 anos, TEA)</div>
             </div>
 
             <div class="testimonial">
-                <p>"Pensei que nunca conseguiria ter uma rotina normal. O método me deu as ferramentas que eu precisava. Hoje, Pedro me abraça espontaneamente e diz 'te amo, mamãe'. Não tem preço!"</p>
+                <p>"Pensei que nunca conseguiria ter uma rotina normal. O método me deu as ferramentas que eu precisava. Hoje, Pedro me abraça espontaneamente e diz 'te amo, mamãe'. Não tem preço! Finalmente temos menos crises e muito mais conexão."</p>
                 <div class="testimonial-author">— Juliana, mãe do Pedro (4 anos, TEA)</div>
             </div>
 
@@ -611,22 +633,22 @@
         <div class="guarantee fade-in">
             <h2>Garantia Incondicional de 7 Dias</h2>
             <p>Aplique o método por 7 dias. Se você não ver uma melhora significativa na rotina e no comportamento do seu filho, devolvemos 100% do seu dinheiro. Sem perguntas, sem complicações.</p>
-            <p><strong>Você não tem nada a perder, apenas uma vida mais leve a ganhar.</strong></p>
+            <p><strong>Você não tem nada a perder, apenas uma vida com menos crises e mais conexão a ganhar.</strong></p>
         </div>
 
         <!-- Seção: Oferta Final -->
         <div id="offer" class="section fade-in" style="text-align: center;">
-            <h2>Sua Nova Vida Começa Agora</h2>
+            <h2>Sua Jornada Rumo a Menos Crises e Mais Conexão Começa Agora</h2>
             <p>Por apenas <strong style="color: var(--success-color); font-size: 24px;">R$ 37,90</strong>, você recebe acesso imediato a todo o sistema que vai transformar sua família.</p>
             <p style="color: var(--danger-color); font-weight: 600;">⚠️ Esta oferta especial expira em poucos minutos!</p>
-            <a href="https://pay.kirvano.com/dfc51481-b46e-4057-82fd-6141de2057a4" class="cta-button" target="_blank">Sim, Quero Minha Transformação Agora!</a>
+            <a href="#checkout-principal" class="cta-button" onclick="smoothScrollToCheckout()">Quero Menos Crises e Mais Conexão Agora!</a>
             <p style="font-size: 14px; color: var(--text-light); margin-top: 16px;">Acesso imediato • Garantia de 7 dias • Suporte especializado</p>
         </div>
     </div>
         
     <!-- CTA Fixo -->
     <div class="sticky-cta">
-        <a href="#offer" class="cta-button" target="_blank">Garantir Agora por R$ 37,90</a>
+        <a href="#checkout-principal" class="cta-button" onclick="smoothScrollToCheckout()">Garantir Agora por R$ 37,90</a>
     </div>
         
     <!-- Footer -->
@@ -691,17 +713,30 @@
         // Smooth scroll para links internos
         function initSmoothScroll() {
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
+                if (!anchor.hasAttribute('onclick')) {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                }
             });
+        }
+        
+        // Scroll suave para o checkout principal
+        function smoothScrollToCheckout() {
+            const checkoutElement = document.getElementById('checkout-principal');
+            if (checkoutElement) {
+                checkoutElement.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
         }
         
         // Inicialização
