@@ -4,117 +4,700 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Conexão Perfeita | Método Comprovado para Reduzir Crises e Aumentar a Conexão com Crianças Autistas</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💙</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Estilos básicos para simulação */
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; color: #333; }
-        .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 20px; }
-        .header { background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%); color: white; padding: 60px 20px; text-align: center; }
-        .section { padding: 60px 20px; }
-        .cta-button { display: inline-block; background: #ff6600; color: white; padding: 15px 30px; font-size: 18px; font-weight: bold; text-decoration: none; border-radius: 5px; margin: 20px 0; }
-        .testimonial { background: #f9f9f9; padding: 20px; border-radius: 10px; margin: 20px 0; }
-        .guarantee { text-align: center; padding: 40px 20px; background: #fff8e1; }
-        footer { background: #333; color: white; text-align: center; padding: 20px; }
+        :root {
+            --primary-color: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary-color: #f59e0b;
+            --accent-color: #ec4899;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --text-light: #9ca3af;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --bg-accent: #fef3f2;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            overflow-x: hidden;
+        }
+
+        /* Timer de Urgência */
+        .urgency-timer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, var(--danger-color), var(--accent-color));
+            color: white;
+            padding: 8px 16px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 1000;
+            box-shadow: var(--shadow-md);
+        }
+
+        .timer-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            max-width: 768px;
+            margin: 0 auto;
+        }
+
+        .timer-display {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        /* Container Principal */
+        .container {
+            max-width: 768px;
+            margin: 0 auto;
+            padding: 0 16px;
+            margin-top: 60px; /* Espaço para o timer */
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 20px 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="white" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 32px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero .subtitle {
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 32px;
+            opacity: 0.95;
+            line-height: 1.4;
+        }
+
+        .hero .urgency-text {
+            background: var(--warning-color);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 14px;
+            display: inline-block;
+            margin-bottom: 24px;
+            box-shadow: var(--shadow-md);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Botões CTA */
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--success-color), #059669);
+            color: white;
+            padding: 18px 32px;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 50px;
+            margin: 16px 8px;
+            transition: all 0.3s ease;
+            box-shadow: var(--shadow-lg);
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .cta-button:active {
+            transform: translateY(0);
+        }
+
+        /* Seções */
+        .section {
+            padding: 60px 20px;
+            margin-bottom: 40px;
+        }
+
+        .section h2 {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            text-align: center;
+            color: var(--text-primary);
+            line-height: 1.3;
+        }
+
+        .section h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--primary-color);
+        }
+
+        .section p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 20px;
+            color: var(--text-secondary);
+        }
+
+        /* Cards de Produto */
+        .product-grid {
+            display: grid;
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .product-card {
+            background: var(--bg-primary);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: var(--shadow-md);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+        }
+
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-xl);
+        }
+
+        .product-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 12px;
+            margin-bottom: 16px;
+        }
+
+        .product-value {
+            background: var(--bg-accent);
+            color: var(--danger-color);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+
+        /* Preços */
+        .pricing {
+            text-align: center;
+            background: linear-gradient(135deg, var(--bg-secondary), white);
+            padding: 40px 24px;
+            border-radius: 20px;
+            margin: 40px 0;
+            box-shadow: var(--shadow-lg);
+            border: 2px solid var(--primary-color);
+            position: relative;
+        }
+
+        .pricing::before {
+            content: '🔥 OFERTA ESPECIAL';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--warning-color);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .original-price {
+            font-size: 18px;
+            color: var(--text-light);
+            text-decoration: line-through;
+            margin-bottom: 8px;
+        }
+
+        .current-price {
+            font-size: 48px;
+            font-weight: 800;
+            color: var(--success-color);
+            margin-bottom: 16px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Depoimentos */
+        .testimonials {
+            background: var(--bg-secondary);
+            padding: 60px 20px;
+            border-radius: 20px;
+            margin: 40px 0;
+        }
+
+        .testimonial {
+            background: white;
+            padding: 24px;
+            border-radius: 16px;
+            margin: 24px 0;
+            box-shadow: var(--shadow-md);
+            border-left: 4px solid var(--primary-color);
+            position: relative;
+        }
+
+        .testimonial::before {
+            content: '"';
+            font-size: 60px;
+            color: var(--primary-color);
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            opacity: 0.3;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-top: 16px;
+            font-size: 14px;
+        }
+
+        /* Garantia */
+        .guarantee {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            padding: 40px 24px;
+            border-radius: 20px;
+            text-align: center;
+            margin: 40px 0;
+            border: 2px solid var(--success-color);
+            position: relative;
+        }
+
+        .guarantee::before {
+            content: '🛡️';
+            font-size: 40px;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        .guarantee h2 {
+            color: var(--success-color);
+            margin-bottom: 16px;
+        }
+
+        /* Lista de Benefícios */
+        .benefits-list {
+            list-style: none;
+            margin: 24px 0;
+        }
+
+        .benefits-list li {
+            padding: 12px 0;
+            position: relative;
+            padding-left: 32px;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+
+        .benefits-list li::before {
+            content: '✅';
+            position: absolute;
+            left: 0;
+            top: 12px;
+        }
+
+        /* Responsividade */
+        @media (min-width: 640px) {
+            .hero h1 {
+                font-size: 40px;
+            }
+            
+            .hero .subtitle {
+                font-size: 20px;
+            }
+            
+            .section h2 {
+                font-size: 32px;
+            }
+            
+            .product-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 32px;
+            }
+            
+            .hero {
+                padding: 80px 40px 100px;
+            }
+            
+            .section {
+                padding: 80px 40px;
+            }
+        }
+
+        /* Animações */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Sticky CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: white;
+            padding: 16px;
+            box-shadow: 0 -4px 6px -1px rgb(0 0 0 / 0.1);
+            z-index: 999;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .sticky-cta .cta-button {
+            width: 100%;
+            margin: 0;
+            max-width: 400px;
+            margin: 0 auto;
+            display: block;
+        }
+
+        /* Footer minimalista */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 80px;
+        }
+
+        .footer p {
+            font-size: 14px;
+            opacity: 0.8;
+            margin-bottom: 8px;
+        }
     </style>
 </head>
 <body>
-
-    <!-- Header/Hero Section -->
-    <div class="header">
-        <h1>Deixe as Crises no Passado e Conecte-se de Verdade com Seu Filho</h1>
-        <p>Descubra o Método que Está Transformando Famílias de Crianças Autistas em Apenas 7 Dias</p>
-        <a href="#offer" class="cta-button">Quero Garantir Agora!</a>
-        <p>⚠️ Últimas Vagas com Preço Promocional!</p>
-    </div>
-
-    <!-- Seção: O Problema -->
-    <div class="section">
-        <h2>Você Já Se Sentiu Assim?</h2>
-        <p>Frustrado(a) com as crises constantes, sem saber como acalmar seu filho? Cansado(a) da rotina caótica e da comunicação que não flui? Você não está sozinho.</p>
-        <p>Mais de 90% dos pais de crianças autistas enfrentam os mesmos desafios diários. Mas existe uma solução simples e comprovada.</p>
-        <!-- IMAGEM AQUI: Coloque uma foto de uma mãe/pai abraçando uma criança com expressão de alívio. -->
-        [IMAGE: family_hug.jpg]
-    </div>
-
-    <!-- Seção: A Solução -->
-    <div class="section">
-        <h2>Apresentamos o Método "Conexão Perfeita"</h2>
-        <p>Um sistema completo em PDF, desenvolvido por especialistas em autismo, que vai guiar você passo a passo para:</p>
-        <ul>
-            <li>Reduzir crises em até 80% nos primeiros 7 dias</li>
-            <li>Estabelecer uma rotina previsível e sem estresse</li>
-            <li>Melhorar a comunicação com seu filho</li>
-            <li>Criar momentos de conexão genuína</li>
-        </ul>
-        <!-- IMAGEM AQUI: Imagem do produto principal (mockup de um ebook com capa atraente) -->
-        [IMAGE: ebook_mockup.png]
-    </div>
-
-    <!-- Seção: O Que Você Vai Receber -->
-    <div class="section">
-        <h2>O Pacote Completo que Você Vai Receber Hoje</h2>
-        
-        <h3>📖 E-book "Café com Teu Filho" (Valor: R$47,90)</h3>
-        <p>O guia principal com os 7 hábitos que vão transformar sua relação com seu filho.</p>
-        <!-- IMAGEM AQUI: Mockup do ebook -->
-        [IMAGE: cafe_com_teu_filho_ebook.png]
-
-        <h3>📋 Checklist Diário Anti-Crise (Valor: R$19,90)</h3>
-        <p>Um checklist prático para você usar no dia a dia e evitar crises antes que comecem.</p>
-        <!-- IMAGEM AQUI: Imagem do checklist -->
-        [IMAGE: checklist_anti_crise.png]
-
-        <h3>📅 Planner Semanal (Valor: R$29,90)</h3>
-        <p>Para organizar sua semana e aplicar os hábitos sem estresse.</p>
-        <!-- IMAGEM AQUI: Mockup do planner -->
-        [IMAGE: planner_semanal.png]
-
-        <h3>🗣️ Mini-guia "Comunicação Calma" (Valor: R$24,90)</h3>
-        <p>Frases prontas e técnicas para acalmar situações de estresse.</p>
-        <!-- IMAGEM AQUI: Mockup do mini-guia -->
-        [IMAGE: comunicacao_calma.png]
-
-        <h3>🎁 BÔNUS EXCLUSIVO: Kit "Meu Dia em Emojis" (Valor: R$21,90)</h3>
-        <p>Um kit de rotinas visuais com emojis e pictogramas para engajar seu filho.</p>
-        <!-- IMAGEM AQUI: Mockup do kit de emojis -->
-        [IMAGE: kit_emojis.png]
-
-        <p><strong>Valor Total Separado: R$145,50</strong></p>
-        <p><strong>Preço Promocional Hoje: Apenas R$37,90</strong></p>
-    </div>
-
-    <!-- Seção: Depoimentos -->
-    <div class="section">
-        <h2>O Que Os Pais Estão Dizendo?</h2>
-        <div class="testimonial">
-            <p>"Antes, nossa casa era um campo de batalha. Após aplicar os 7 hábitos, meu filho está mais calmo e finalmente temos momentos de conexão de verdade!" - Ana, mãe do João (5 anos, TEA)</p>
+    <!-- Timer de Urgência -->
+    <div class="urgency-timer">
+        <div class="timer-content">
+            <span>⏰ Oferta expira em:</span>
+            <div class="timer-display" id="countdown">29:59</div>
         </div>
-        <div class="testimonial">
-            <p>"O checklist anti-crise salvou nossos finais de semana. Agora sabemos como agir antes que uma crise aconteça." - Carlos, pai da Sofia (6 anos, TEA)</p>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <div class="hero-content fade-in">
+                <h1>Transforme as Crises em Conexão em Apenas 7 Dias</h1>
+                <p class="subtitle">O método comprovado que está revolucionando a vida de famílias com crianças autistas</p>
+                <div class="urgency-text">⚠️ Últimas 47 vagas com 74% de desconto</div>
+                <a href="#offer" class="cta-button">Sim, Quero Transformar Nossa Rotina!</a>
+            </div>
         </div>
-        <!-- IMAGEM AQUI: Adicione fotos de stock de famílias felizes (mesmo que genéricas) -->
-        [IMAGE: happy_family1.jpg]
-        [IMAGE: happy_family2.jpg]
     </div>
 
-    <!-- Seção: Garantia -->
-    <div class="guarantee">
-        <h2>Garantia Incondicional de 7 Dias</h2>
-        <p>Se você não ficar satisfeito(a) com o método, devolvemos 100% do seu dinheiro. Sem perguntas, sem complicações.</p>
+    <div class="container">
+        <!-- Seção: O Problema -->
+        <div class="section fade-in">
+            <h2>Você Reconhece Essa Realidade?</h2>
+            <p>Noites sem dormir por causa das crises constantes. Momentos de desespero sem saber como acalmar seu filho. A sensação de que nada funciona e que você está falhando como mãe ou pai.</p>
+            <p><strong>Você não está sozinha.</strong> Mais de 90% dos pais de crianças autistas vivem essa mesma angústia diariamente. Mas existe uma luz no fim do túnel.</p>
+            
+            <div style="text-align: center; margin: 40px 0;">
+                <img src="family_hug.jpg" alt="Família abraçada" style="max-width: 100%; border-radius: 16px; box-shadow: var(--shadow-lg);">
+            </div>
+        </div>
+
+        <!-- Seção: A Solução -->
+        <div class="section fade-in">
+            <h2>Apresentamos o Método "Conexão Perfeita"</h2>
+            <p>Um sistema completo e cientificamente embasado que vai guiar você passo a passo para criar uma rotina harmoniosa e cheia de amor com seu filho.</p>
+            
+            <ul class="benefits-list">
+                <li>Reduzir crises em até 80% nos primeiros 7 dias</li>
+                <li>Estabelecer uma rotina previsível e sem estresse</li>
+                <li>Melhorar a comunicação com seu filho de forma natural</li>
+                <li>Criar momentos genuínos de conexão e alegria</li>
+                <li>Recuperar sua confiança como mãe/pai</li>
+                <li>Transformar sua casa em um ambiente de paz</li>
+            </ul>
+        </div>
+
+        <!-- Seção: O Que Você Vai Receber -->
+        <div class="section fade-in">
+            <h2>Seu Kit Completo de Transformação</h2>
+            
+            <div class="product-grid">
+                <div class="product-card">
+                    <img src="cafe_com_teu_filho_ebook.png" alt="E-book Café com Teu Filho">
+                    <div class="product-value">Valor: R$ 47,90</div>
+                    <h3>📖 E-book "Café com Teu Filho"</h3>
+                    <p>O guia principal com os 7 hábitos transformadores que vão revolucionar sua relação com seu filho. Baseado em anos de pesquisa e casos reais de sucesso.</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="checklist_anti_crise.png" alt="Checklist Anti-Crise">
+                    <div class="product-value">Valor: R$ 19,90</div>
+                    <h3>📋 Checklist Diário Anti-Crise</h3>
+                    <p>Sua ferramenta de emergência para prevenir crises antes que aconteçam. Um passo a passo prático para usar no dia a dia.</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="planner_semanal.png" alt="Planner Semanal">
+                    <div class="product-value">Valor: R$ 29,90</div>
+                    <h3>📅 Planner Semanal Personalizado</h3>
+                    <p>Organize sua semana e aplique os hábitos sem estresse. Inclui templates prontos para diferentes situações.</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="comunicacao_calma.jpg" alt="Guia Comunicação Calma">
+                    <div class="product-value">Valor: R$ 24,90</div>
+                    <h3>🗣️ Mini-guia "Comunicação Calma"</h3>
+                    <p>Frases prontas e técnicas comprovadas para acalmar situações de estresse e criar conexão instantânea.</p>
+                </div>
+
+                <div class="product-card">
+                    <img src="kit_emojis.png" alt="Kit Emojis">
+                    <div class="product-value">Valor: R$ 21,90</div>
+                    <h3>🎁 BÔNUS: Kit "Meu Dia em Emojis"</h3>
+                    <p>Rotinas visuais com emojis e pictogramas para engajar seu filho e tornar o dia mais previsível e divertido.</p>
+                </div>
+            </div>
+
+            <div class="pricing">
+                <div class="original-price">Valor Total Separado: R$ 145,50</div>
+                <div class="current-price">R$ 37,90</div>
+                <p style="font-weight: 600; color: var(--success-color);">Economia de R$ 107,60 (74% OFF)</p>
+                <a href="#checkout" class="cta-button">Quero Garantir Minha Transformação!</a>
+            </div>
+        </div>
+
+        <!-- Seção: Depoimentos -->
+        <div class="testimonials fade-in">
+            <h2>Histórias Reais de Transformação</h2>
+            
+            <div class="testimonial">
+                <p>"Em apenas 5 dias aplicando o método, as crises do João diminuíram 70%. Pela primeira vez em anos, nossa casa voltou a ter paz. Meu filho está mais calmo e eu me sinto uma mãe confiante novamente!"</p>
+                <div class="testimonial-author">— Ana Paula, mãe do João (5 anos, TEA)</div>
+            </div>
+
+            <div class="testimonial">
+                <p>"O checklist anti-crise salvou nossos finais de semana. Agora conseguimos sair de casa sem medo e criar memórias felizes em família. Sofia está mais comunicativa e carinhosa."</p>
+                <div class="testimonial-author">— Carlos e Marina, pais da Sofia (6 anos, TEA)</div>
+            </div>
+
+            <div class="testimonial">
+                <p>"Pensei que nunca conseguiria ter uma rotina normal. O método me deu as ferramentas que eu precisava. Hoje, Pedro me abraça espontaneamente e diz 'te amo, mamãe'. Não tem preço!"</p>
+                <div class="testimonial-author">— Juliana, mãe do Pedro (4 anos, TEA)</div>
+            </div>
+
+            <div style="text-align: center; margin: 40px 0;">
+                <img src="happy_family1.jpg" alt="Família feliz" style="max-width: 100%; border-radius: 16px; box-shadow: var(--shadow-lg); margin: 16px;">
+                <img src="happy_family2.jpg" alt="Família feliz" style="max-width: 100%; border-radius: 16px; box-shadow: var(--shadow-lg); margin: 16px;">
+            </div>
+        </div>
+
+        <!-- Seção: Garantia -->
+        <div class="guarantee fade-in">
+            <h2>Garantia Incondicional de 7 Dias</h2>
+            <p>Aplique o método por 7 dias. Se você não ver uma melhora significativa na rotina e no comportamento do seu filho, devolvemos 100% do seu dinheiro. Sem perguntas, sem complicações.</p>
+            <p><strong>Você não tem nada a perder, apenas uma vida mais leve a ganhar.</strong></p>
+        </div>
+
+        <!-- Seção: Oferta Final -->
+        <div id="offer" class="section fade-in" style="text-align: center;">
+            <h2>Sua Nova Vida Começa Agora</h2>
+            <p>Por apenas <strong style="color: var(--success-color); font-size: 24px;">R$ 37,90</strong>, você recebe acesso imediato a todo o sistema que vai transformar sua família.</p>
+            <p style="color: var(--danger-color); font-weight: 600;">⚠️ Esta oferta especial expira em poucos minutos!</p>
+            <a href="#checkout" class="cta-button">Sim, Quero Minha Transformação Agora!</a>
+            <p style="font-size: 14px; color: var(--text-light); margin-top: 16px;">Acesso imediato • Garantia de 7 dias • Suporte especializado</p>
+        </div>
     </div>
 
-    <!-- Seção: Oferta Final -->
-    <div id="offer" class="section" style="text-align: center;">
-        <h2>Pronto para Transformar Sua Rotina?</h2>
-        <p>Por apenas <strong>R$37,90</strong>, você recebe acesso imediato a todos os materiais.</p>
-        <p>⚠️ Esta oferta especial é por tempo limitado. Não perca!</p>
-        <a href="#checkout" class="cta-button">Quero Garantir Agora!</a>
+    <!-- CTA Fixo -->
+    <div class="sticky-cta">
+        <a href="#checkout" class="cta-button">Garantir Agora por R$ 37,90</a>
     </div>
 
     <!-- Footer -->
-    <footer>
-        <p>© 2025 Conexão Perfeita. Todos os direitos reservados.</p>
-        <p><a href="#">Política de Privacidade</a> | <a href="#">Termos de Uso</a></p>
-    </footer>
+    <div class="footer">
+        <p>© 2025 Conexão Perfeita. Transformando famílias com amor e ciência.</p>
+        <p>Todos os direitos reservados.</p>
+    </div>
 
+    <script>
+        // Timer de 30 minutos que reinicia a cada nova sessão
+        function initTimer() {
+            let timeLeft = 30 * 60; // 30 minutos em segundos
+            
+            // Verifica se já existe um timer ativo nesta sessão
+            const sessionTimer = sessionStorage.getItem('timerStartTime');
+            if (sessionTimer) {
+                const elapsed = Math.floor((Date.now() - parseInt(sessionTimer)) / 1000);
+                timeLeft = Math.max(0, timeLeft - elapsed);
+            } else {
+                sessionStorage.setItem('timerStartTime', Date.now().toString());
+            }
+            
+            const countdownElement = document.getElementById('countdown');
+            
+            function updateTimer() {
+                if (timeLeft <= 0) {
+                    countdownElement.textContent = '00:00';
+                    // Reinicia o timer
+                    timeLeft = 30 * 60;
+                    sessionStorage.setItem('timerStartTime', Date.now().toString());
+                    return;
+                }
+                
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                countdownElement.textContent = 
+                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                timeLeft--;
+            }
+            
+            updateTimer();
+            setInterval(updateTimer, 1000);
+        }
+        
+        // Animações de entrada
+        function initAnimations() {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animationDelay = '0.1s';
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            });
+            
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+        
+        // Smooth scroll para links internos
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        }
+        
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            initTimer();
+            initAnimations();
+            initSmoothScroll();
+        });
+    </script>
 </body>
 </html>
+
