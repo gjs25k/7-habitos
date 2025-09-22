@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obrigado! Sua Transformação Começa Agora | Conexão Perfeita</title>
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💙</text></svg>">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary-color: #f59e0b;
+            --accent-color: #ec4899;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --danger-color: #ef4444;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --text-light: #9ca3af;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f9fafb;
+            --bg-accent: #fef3f2;
+            --border-color: #e5e7eb;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow-xl);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(135deg, var(--success-color), var(--primary-color));
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--success-color), #059669);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            animation: bounce 1s ease-in-out;
+        }
+
+        .success-icon::before {
+            content: '✓';
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0);
+            }
+            40% {
+                transform: translateY(-10px);
+            }
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            margin-bottom: 32px;
+            line-height: 1.5;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+            border: 2px solid var(--success-color);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 32px 0;
+            position: relative;
+        }
+
+        .highlight-box::before {
+            content: '🎉';
+            font-size: 24px;
+            position: absolute;
+            top: -12px;
+            left: 24px;
+            background: white;
+            padding: 0 8px;
+        }
+
+        .next-steps {
+            background: var(--bg-secondary);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 32px 0;
+            text-align: left;
+        }
+
+        .next-steps h3 {
+            color: var(--primary-color);
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .step {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 16px;
+            padding: 12px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 12px;
+            flex-shrink: 0;
+        }
+
+        .step-content {
+            flex: 1;
+        }
+
+        .step-title {
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .step-description {
+            font-size: 14px;
+            color: var(--text-secondary);
+        }
+
+        .contact-info {
+            background: var(--bg-accent);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 32px 0;
+        }
+
+        .contact-info h3 {
+            color: var(--accent-color);
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        .contact-info p {
+            font-size: 14px;
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin: 24px 0;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-link:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .footer {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-color);
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .guarantee-badge {
+            display: inline-flex;
+            align-items: center;
+            background: var(--success-color);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin: 16px 0;
+        }
+
+        .guarantee-badge::before {
+            content: '🛡️';
+            margin-right: 8px;
+        }
+
+        /* Responsividade */
+        @media (max-width: 640px) {
+            .container {
+                padding: 24px;
+                margin: 10px;
+            }
+            
+            h1 {
+                font-size: 24px;
+            }
+            
+            .subtitle {
+                font-size: 16px;
+            }
+            
+            .social-links {
+                gap: 12px;
+            }
+        }
+
+        /* Animações */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.6s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .container > * {
+            animation-delay: 0.1s;
+        }
+
+        .container > *:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .container > *:nth-child(3) {
+            animation-delay: 0.3s;
+        }
+
+        .container > *:nth-child(4) {
+            animation-delay: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="success-icon fade-in"></div>
+        
+        <h1 class="fade-in">Parabéns! Sua Jornada de Transformação Começou! 🎉</h1>
+        
+        <p class="subtitle fade-in">Obrigado por confiar no Método Conexão Perfeita. Você acabou de dar o primeiro passo para transformar a vida da sua família!</p>
+        
+        <div class="highlight-box fade-in">
+            <h3 style="color: var(--success-color); margin-bottom: 12px;">✅ Pagamento Confirmado com Sucesso!</h3>
+            <p>Seu acesso aos materiais será liberado em até 10 minutos no e-mail cadastrado na compra.</p>
+            <div class="guarantee-badge">Garantia de 7 dias</div>
+        </div>
+
+        <div class="next-steps fade-in">
+            <h3>📋 Próximos Passos</h3>
+            
+            <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <div class="step-title">Verifique seu e-mail</div>
+                    <div class="step-description">Em até 10 minutos você receberá o acesso completo aos materiais</div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <div class="step-title">Baixe todos os materiais</div>
+                    <div class="step-description">E-book, checklists, planner e todos os bônus exclusivos</div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <div class="step-title">Comece hoje mesmo</div>
+                    <div class="step-description">Aplique o primeiro hábito ainda hoje e veja a diferença</div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <div class="step-title">Acompanhe sua evolução</div>
+                    <div class="step-description">Use o checklist diário para monitorar os progressos</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-info fade-in">
+            <h3>💬 Precisa de Ajuda?</h3>
+            <p><strong>E-mail:</strong> suporte@conexaoperfeita.com</p>
+            <p><strong>WhatsApp:</strong> (11) 99999-9999</p>
+            <p>Estamos aqui para apoiar você em cada passo da sua jornada!</p>
+        </div>
+
+        <div class="social-links fade-in">
+            <a href="#" class="social-link" title="Instagram">📷</a>
+            <a href="#" class="social-link" title="Facebook">📘</a>
+            <a href="#" class="social-link" title="YouTube">📺</a>
+            <a href="#" class="social-link" title="WhatsApp">💬</a>
+        </div>
+
+        <div class="footer fade-in">
+            <p><strong>Lembre-se:</strong> Sua transformação começa agora. Cada pequeno passo conta!</p>
+            <p style="margin-top: 16px;">© 2025 Conexão Perfeita. Transformando famílias com amor e ciência.</p>
+        </div>
+    </div>
+
+    <script>
+        // Animações de entrada
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.fade-in');
+            
+            elements.forEach((element, index) => {
+                setTimeout(() => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+
+        // Confetti effect (opcional)
+        function createConfetti() {
+            const colors = ['#6366f1', '#10b981', '#f59e0b', '#ec4899'];
+            
+            for (let i = 0; i < 50; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'fixed';
+                confetti.style.width = '10px';
+                confetti.style.height = '10px';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.animationDuration = Math.random() * 3 + 2 + 's';
+                confetti.style.opacity = Math.random();
+                confetti.style.borderRadius = '50%';
+                confetti.style.animation = 'fall linear infinite';
+                confetti.style.zIndex = '1000';
+                
+                document.body.appendChild(confetti);
+                
+                setTimeout(() => {
+                    confetti.remove();
+                }, 5000);
+            }
+        }
+
+        // CSS para animação do confetti
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Ativar confetti após 1 segundo
+        setTimeout(createConfetti, 1000);
+    </script>
+</body>
+</html>
+
